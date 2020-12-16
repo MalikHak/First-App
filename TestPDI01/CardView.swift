@@ -2,24 +2,26 @@
 //  CardView.swift
 //  TestPDI01
 //
-//  Created by Faisal Hakim on 12/2/20.
+//  Created by Faisal Hakim on 12/16/20.
 //  Copyright © 2020 Faisal Hakim. All rights reserved.
 //
 
 import SwiftUI
 
 struct CardView: View {
+    //First I addded annew card //object
+    var card : Card
     var body: some View {
         
         ZStack{
-            Image("AUAF")
+            Image(card.imageName)
             VStack{
                     
-                    Text("Welcome to AUAF")
+                Text(card.title)
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
-                    Text("This is David")
+                Text(card.subTitle)
                         .font(.subheadline)
                         .fontWeight(.medium)
                         .foregroundColor(Color.red)
@@ -29,7 +31,7 @@ struct CardView: View {
             
             Button(action:{
                 
-            print("Button Was pressed")
+                print(card.message)
             }){
         
                 HStack{
@@ -47,6 +49,6 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView()
+        CardView(card: cardData[2])
     }
 }
