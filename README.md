@@ -1,2 +1,2 @@
 # First-App IOS
-Detail App
+Details App IOS Swift UI
